@@ -1,0 +1,8 @@
+<h1><%= @question.text %></h1>
+<ul>
+  <% @question.options.each do |option| %>
+    <li>
+      <%= option.text %>
+    </li>
+  <% end %>
+</ul>

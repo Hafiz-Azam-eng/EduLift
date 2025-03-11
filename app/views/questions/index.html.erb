@@ -1,0 +1,18 @@
+<h1>MCQ Quiz</h1>
+
+<%= form_with url: user_answers_path, method: :post do %>
+  <% @questions.each do |question| %>
+    <div class="question-block">
+      <h3><%= question.text %></h3>
+
+      <% question.options.each do |option| %>
+        <label>
+          <%= radio_button_tag "answers[#{question.id}]", option.id %>
+          <%= option.text %>
+        </label>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= submit_tag "Submit Answers" %>
+<% end %>
